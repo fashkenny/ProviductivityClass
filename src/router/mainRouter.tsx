@@ -10,14 +10,21 @@ import Done from "../pages/LandingPage/Done/Done"
 import Progress from "../pages/LandingPage/Progress/Progress"
 import MostTAsk from "../pages/LandingPage/MostTask/MostTAsk"
 import MostDoneTask from "../pages/LandingPage/MostDoneTask/MostDoneTask"
+import LandingPage from "../pages/LandingPage"
+import LayOut from "../components/common/LayOut"
 
 
 export const mainRouter = createBrowserRouter([
     {
         path: "/",
-        element: <PrivateRoute>
-            <HomeScreen />
-        </PrivateRoute>
+        element: <LayOut/>,
+        children: [
+            {
+                index: true,
+                element: <LandingPage/>
+            }
+        ]
+
     },
     {
         path: "/sign-in",
@@ -36,7 +43,9 @@ export const mainRouter = createBrowserRouter([
         children:[
             {
                 index: true,
-                element: <HomeScreen/>
+                element: <PrivateRoute>
+                <HomeScreen />
+            </PrivateRoute>
             }, 
             {
                 path: "alltask",
