@@ -16,7 +16,7 @@ export default MostTAsk
 const Container = styled.div`
 display:flex;
 width: calc(100% - 20%);
-height: auto;
+height: 500px;
 padding-top: 50px;
 margin-left: 260px;
 `
